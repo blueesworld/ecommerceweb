@@ -82,6 +82,55 @@ tr:last-child td{border-bottom:0}tbody tr[data-id]{cursor:pointer}tbody tr[data-
 .obc h2{font-size:24px;letter-spacing:-.02em;margin:14px 0 6px}.obc p{color:var(--t2);margin-bottom:18px}
 .hint{color:var(--t2);font-size:12.5px;margin-top:6px}
 @media(max-width:900px){.side{display:none}main{margin-left:0;padding:16px}.g5,.g2,.g2e{grid-template-columns:1fr}.kr{flex-wrap:wrap}.logo{width:auto}}
+/* ===== glass / dark-light ===== */
+body{background:radial-gradient(900px 500px at 85% -5%,#cfe6ff 0,transparent 60%),radial-gradient(700px 500px at 15% 110%,#e6dcff 0,transparent 60%),#f1f1f1;background-attachment:fixed}
+.top{background:rgba(14,14,16,.72);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);box-shadow:inset 0 -1px 0 rgba(255,255,255,.08)}
+.srch,.shop{background:rgba(255,255,255,.1);border-radius:999px;box-shadow:inset 0 1px 1px rgba(255,255,255,.18);transition:background .25s}
+.srch:focus-within{background:rgba(255,255,255,.18)}.shop{cursor:pointer}.tbtn:hover{background:rgba(255,255,255,.12)}
+.side{background:linear-gradient(180deg,#0b0b0d,#1c1c21);color:#fff;padding:14px 12px}
+#side{position:relative}
+.nav{position:relative;z-index:1;color:#d0d0d5;border-radius:12px;transition:color .25s,transform .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:2px}
+.nav:hover{background:rgba(255,255,255,.07);transform:translateX(3px)}.nav.on{background:none;box-shadow:none;color:#fff}
+.nav em{background:var(--green);color:#fff}.sl{color:#8e8e93}
+#lens{position:absolute;left:12px;right:12px;top:0;height:36px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.07));box-shadow:inset 0 1px 1px rgba(255,255,255,.38),0 6px 16px rgba(0,0,0,.45);transition:transform .55s cubic-bezier(.34,1.35,.5,1),height .3s;pointer-events:none;z-index:0}
+.card{background:rgba(255,255,255,.7);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-radius:24px;box-shadow:inset 0 1px 1px rgba(255,255,255,.95),0 0 0 1px rgba(0,0,0,.06),0 10px 30px rgba(0,0,0,.05);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.grid>div>.card:hover,.grid>.card:hover{transform:translateY(-2px);box-shadow:inset 0 1px 1px #fff,0 0 0 1px rgba(0,0,0,.06),0 18px 40px rgba(0,0,0,.09)}
+.btn{border-radius:999px;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);box-shadow:inset 0 1px 1px #fff,0 0 0 1px rgba(0,0,0,.1),0 4px 12px rgba(0,0,0,.05);transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s}
+.btn:hover{transform:translateY(-1px);background:#fff}.btn:active{transform:scale(.95)}
+.btn.g{background:linear-gradient(180deg,#12a47e,#008060);box-shadow:inset 0 1px 1px rgba(255,255,255,.38),0 8px 20px rgba(0,128,96,.3)}
+.btn.p{background:linear-gradient(180deg,#2a2a2d,#111)}
+.tab,.seg,.seg button,.badge,.tabs input,.f input,.f select{border-radius:999px}.f input,.f select{padding:9px 14px}
+.tab{transition:background .2s,transform .2s}.tab:active{transform:scale(.94)}
+th{background:rgba(247,247,247,.55)}tbody tr{transition:background .15s}
+.hero{position:relative;overflow:hidden;border-radius:32px;padding:24px 24px 10px;margin-bottom:18px;color:#fff;background:radial-gradient(520px 280px at 92% 0,rgba(42,167,255,.3),transparent 70%),radial-gradient(440px 260px at 0 100%,rgba(138,47,201,.32),transparent 70%),#000;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.hh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.gr{font-size:28px;font-weight:650;letter-spacing:-.025em}.gs{color:#9a9aa0;font-size:15px;margin-top:2px}
+.gl{appearance:none;color:#fff;font-weight:600;padding:10px 20px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);box-shadow:inset 0 1px 1px rgba(255,255,255,.28),0 6px 16px rgba(0,0,0,.35);cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.gl:active{transform:scale(.94)}.gl option{color:#000}
+.mets{display:flex;gap:6px;overflow-x:auto;padding:20px 0 8px}
+.hero .kpi{flex:none;border:1px solid transparent;border-radius:24px;padding:10px 18px;background:none;color:#fff;cursor:pointer;transition:background .35s,border-color .35s,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.hero .kpi:hover{background:rgba(255,255,255,.07)}.hero .kpi:active{transform:scale(.95)}
+.hero .kpi.on{background:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.06));border-color:rgba(255,255,255,.15);backdrop-filter:blur(16px);box-shadow:inset 0 1px 1px rgba(255,255,255,.28),0 6px 18px rgba(0,0,0,.35)}
+.hero .kpi.live{cursor:default}.hero .kpi span{color:#d6d6da;font-size:14px}.hero .kpi b{font-size:23px;display:flex;align-items:center;gap:8px;margin-top:3px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hero .d{font-size:13.5px}.hero .d.up{color:#34d27b}.hero .d.down{color:#ff6b5e}
+.ring{width:20px;height:20px;border-radius:50%;border:2.2px dotted #34d27b;position:relative;display:inline-block;animation:spin 7s linear infinite}
+.ring:after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:#34d27b;animation:pulse 1.8s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{transform:scale(.7);opacity:.7}50%{transform:scale(1);opacity:1}}
+.hero .chartw{padding:6px 0 12px}.chartw svg{height:270px}
+.tip{background:rgba(58,58,64,.62);backdrop-filter:blur(16px) saturate(170%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 1px rgba(255,255,255,.2),0 8px 22px rgba(0,0,0,.4);border-radius:14px;padding:8px 14px}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}#csvg.wipe{animation:wipe 1.1s cubic-bezier(.3,.7,.2,1) both}
+.ms{background:linear-gradient(180deg,#000,#222225 55%,#6c6c72);color:#fff}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+main.anim>*{animation:rise .6s cubic-bezier(.2,.85,.25,1) both}
+main.anim>:nth-child(2){animation-delay:.06s}main.anim>:nth-child(3){animation-delay:.12s}main.anim>:nth-child(4){animation-delay:.18s}main.anim>:nth-child(n+5){animation-delay:.24s}
+.ov{display:block;opacity:0;pointer-events:none;transition:opacity .3s}.ov.show{opacity:1;pointer-events:auto;backdrop-filter:blur(4px)}
+.dr{background:rgba(243,243,246,.78);backdrop-filter:blur(36px) saturate(200%);-webkit-backdrop-filter:blur(36px) saturate(200%);border-radius:30px 0 0 30px;transition:transform .55s cubic-bezier(.32,.72,0,1);box-shadow:inset 1.5px 0 1px rgba(255,255,255,.95),-16px 0 50px rgba(0,0,0,.22)}
+.dh{background:transparent;border:0}
+.ban{background:rgba(245,245,248,.74);backdrop-filter:blur(30px) saturate(200%);border-radius:24px;box-shadow:inset 0 1px 1px rgba(255,255,255,.9),0 14px 38px rgba(0,0,0,.3)}
+.toast{background:rgba(32,32,36,.72);backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.14);border-radius:999px;box-shadow:inset 0 1px 1px rgba(255,255,255,.2),0 10px 28px rgba(0,0,0,.3)}
+.obc{border-radius:32px;background:rgba(255,255,255,.8);backdrop-filter:blur(30px)}
+.sw{transition:background .25s}.sw:after{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -91,8 +140,8 @@ tr:last-child td{border-bottom:0}tbody tr[data-id]{cursor:pointer}tbody tr[data-
   <button class="tbtn" id="bell" title="Mitteilungen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><b id="bc" style="display:none">0</b></button>
   <div class="shop"><i id="si">M</i><span id="sn">Mein Shop</span></div>
 </header>
-<aside class="side" id="side"></aside>
-<main id="main"></main>
+<aside class="side"><i id="lens"></i><div id="side"></div></aside>
+<main id="main" class="anim"></main>
 <div class="ov" id="ov"></div>
 <div class="dr" id="dr"><div class="dh"><span id="dt"></span><button class="btn" id="dx">Schließen</button></div><div class="db" id="db"></div></div>
 <div class="ban" id="ban"><i>E</i><div><b id="bt"></b><span id="bm"></span></div></div>
@@ -120,7 +169,7 @@ function blank(){return{onboarded:false,settings:{shopName:"",ownerName:"",email
 function load(){try{const r=localStorage.getItem(KEY);if(r){const p=JSON.parse(r);return Object.assign(blank(),p,{admin:Object.assign(blank().admin,p.admin||{})})}}catch(e){}return blank()}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 let S=load();
-let V={page:"home",range:30,metric:"sales",of:"all",oq:"",pq:"",cart:{}};
+let V={fresh:true,page:"home",range:30,metric:"sales",of:"all",oq:"",pq:"",cart:{}};
 let auto=null;
 
 const fmt=n=>Number(n).toLocaleString("de-DE",{style:"currency",currency:S.settings.currency||"EUR"});
@@ -179,9 +228,10 @@ function render(){
   const nb=(k,l,extra)=>`<button class="nav ${V.page===k?"on":""}" data-p="${k}">${ico(k)}${l}${extra?`<em>${extra}</em>`:""}</button>`;
   $("side").innerHTML=NAV.map(([k,l])=>nb(k,l,k==="orders"&&toShip?toShip:"")).join("")+`<div class="sl">Mitteilungen &amp; System</div>`+nb("notif","Mitteilungen",un||"")+nb("settings","Einstellungen")+nb("admin","Admin-Panel");
   $("side").querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>go(b.dataset.p));
+  {const a=$("side").querySelector(".nav.on"),ln=$("lens");if(a&&ln){ln.style.height=a.offsetHeight+"px";ln.style.transform="translateY("+a.offsetTop+"px)"}}
   ({home:pHome,orders:pOrders,products:pProducts,customers:pCustomers,discounts:pDiscounts,notif:pNotif,settings:pSettings,admin:pAdmin})[V.page]($("main"));
 }
-function go(p){V.page=p;window.scrollTo(0,0);render()}
+function go(p){V.page=p;V.fresh=true;window.scrollTo(0,0);const m=$("main");m.classList.remove("anim");void m.offsetWidth;m.classList.add("anim");clearTimeout(go.t);go.t=setTimeout(()=>m.classList.remove("anim"),1000);render()}
 $("bell").onclick=()=>go("notif");
 $("gq").addEventListener("keydown",e=>{if(e.key==="Enter"){V.oq=e.target.value;V.of="all";e.target.value="";go("orders")}});
 
@@ -192,9 +242,10 @@ $("ov").onclick=closeDr;$("dx").onclick=closeDr;document.addEventListener("keydo
 
 /* HOME */
 const METRICS=[["sales","Gesamtumsatz"],["sessions","Sitzungen"],["orders","Bestellungen"],["conv","Conversion"],["aov","Ø Warenkorb"]];
+function liveN(){const t=Date.now();return Math.min(9,Math.max(1,S.orders.filter(o=>t-new Date(o.date)<20*60000).length+1))}
 function pHome(el){
   const r=V.range,cur=daySeries(r,0),prev=daySeries(r,r),a=agg(cur),p=agg(prev),k=V.metric;
-  const kp=METRICS.map(([m,l])=>{const d=delta(a[m],p[m]);return `<button class="kpi ${k===m?"on":""}" data-k="${m}"><span>${l}</span><b>${fm(m,a[m])}</b><span class="d ${d.cls}">${d.txt}</span></button>`}).join("");
+  const kp=METRICS.map(([m,l])=>{const d=delta(a[m],p[m]);return `<button class="kpi ${k===m?"on":""}" data-k="${m}"><span>${l}</span><b data-m="${m}" data-v="${a[m]}">${fm(m,a[m])}</b><span class="d ${d.cls}">${d.txt}</span></button>`}).join("");
   const done=[S.products.length>0,S.setup.theme,S.setup.pay,S.setup.domain,S.orders.length>0],nd=done.filter(Boolean).length;
   const steps=[["Erstes Produkt hinzufügen","Lege fest, was du verkaufst","addprod"],["Shop-Design anpassen","Farbe wählen","theme"],["Zahlungen einrichten","Karte, PayPal & mehr","pay"],["Domain verbinden","Eigene Shop-Adresse","domain"],["Erste Bestellung erhalten","Teste mit dem Admin-Panel","first"]];
   const setup=nd<5?`<div class="card"><div class="pad"><b style="font-size:15px">Einrichtungsleitfaden</b> <span class="hint">${nd} von 5 erledigt</span><div class="bar"><i style="width:${nd*20}%"></i></div></div>${steps.map((s,i)=>`<div class="step ${done[i]?"done":""}" data-s="${s[2]}"><div class="chk">${done[i]?"✓":""}</div><div><b>${s[0]}</b><div class="hint" style="margin:0">${s[1]}</div></div></div>`).join("")}</div>`:"";
@@ -202,26 +253,30 @@ function pHome(el){
   const top=Object.entries(sold).sort((x,y)=>y[1].r-x[1].r).slice(0,5);
   const rec=[...S.orders].sort((x,y)=>new Date(y.date)-new Date(x.date)).slice(0,6);
   const t3=new Date();t3.setHours(0,0,0,0);t3.setDate(t3.getDate()-2);const payout=S.orders.filter(o=>o.paid&&new Date(o.date)>=t3).reduce((t,o)=>t+o.total,0)*.971;
-  el.innerHTML=`<h1>Guten ${new Date().getHours()<11?"Morgen":new Date().getHours()<18?"Tag":"Abend"}${S.settings.ownerName?", "+esc(S.settings.ownerName):""}<span style="display:flex;gap:8px"><select id="rg" class="btn">${[7,30,90].map(x=>`<option value="${x}" ${r===x?"selected":""}>Letzte ${x} Tage</option>`).join("")}</select></span></h1>
+  const hr=new Date().getHours();
+  el.innerHTML=`<div class="hero"><div class="hh"><div><div class="gr">Guten ${hr<11?"Morgen":hr<18?"Tag":"Abend"}${S.settings.ownerName?", "+esc(S.settings.ownerName):""}!</div><div class="gs">Hier ist deine Aktivität</div></div><div class="hp"><select id="rg" class="gl">${[7,30,90].map(x=>`<option value="${x}" ${r===x?"selected":""}>Letzte ${x} Tage</option>`).join("")}</select></div></div>
+  <div class="mets"><div class="kpi live"><span>Live</span><b><i class="ring"></i>${liveN()}</b></div>${kp}</div>
+  <div class="chartw" id="cw">${chartSvg(cur,prev,k)}<div class="tip" id="tip"></div></div></div>
   ${setup}
-  <div class="card"><div class="kr">${kp}</div><div class="chartw" id="cw">${chartSvg(cur,prev,k)}<div class="tip" id="tip"></div></div></div>
   <div class="grid g2"><div class="card"><div class="pad ct" style="margin:0">Letzte Bestellungen</div>${rec.length?`<table><tbody>${rec.map(o=>`<tr data-id="${o.id}"><td><b>#${o.no}</b> ${esc(o.customer)}<div class="hint" style="margin:0">${ago(o.date)}</div></td><td>${badges(o)}</td><td class="r"><b>${fmt(o.total)}</b></td></tr>`).join("")}</tbody></table>`:`<div class="emp"><h3>Noch keine Bestellungen</h3>Erzeuge Testdaten im Admin-Panel.<br><button class="btn g" data-p="admin">Admin-Panel öffnen</button></div>`}</div>
-  <div><div class="card pad"><div class="hint" style="margin:0">Nächste Auszahlung</div><div style="font-size:24px;font-weight:700">${fmt(payout)}</div></div>
+  <div><div class="card pad ms"><div class="hint" style="margin:0;color:#c4c4c9">Nächste Auszahlung</div><div style="font-size:26px;font-weight:700;letter-spacing:-.02em">${fmt(payout)}</div></div>
   <div class="card"><div class="pad ct" style="margin:0">Top-Produkte</div>${top.length?`<table><tbody>${top.map(t=>`<tr><td><span class="th">${t[1].e}</span>${esc(t[0])}</td><td class="r">${t[1].q}× · <b>${fmt(t[1].r)}</b></td></tr>`).join("")}</tbody></table>`:`<div class="emp">Verkaufsdaten erscheinen hier.</div>`}</div></div></div>`;
-  $("rg").onchange=e=>{V.range=+e.target.value;render()};
-  el.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{V.metric=b.dataset.k;render()});
+  $("rg").onchange=e=>{V.range=+e.target.value;V.wipe=true;render()};
+  el.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{V.metric=b.dataset.k;V.wipe=true;render()});
   el.querySelectorAll("[data-id]").forEach(r=>r.onclick=()=>openOrder(r.dataset.id));
   el.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>go(b.dataset.p));
   el.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>step(b.dataset.s));
-  bindChart(cur,k)}
+  bindChart(cur,k);
+  if(V.fresh)el.querySelectorAll(".kpi b[data-m]").forEach(b=>{const m=b.dataset.m,to=+b.dataset.v,t0=performance.now();(function f(t){const q=Math.min(1,(t-t0)/900);b.textContent=fm(m,to*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(f)})(t0)});
+  V.fresh=false;V.wipe=false}
 const CW=800,CH=240,CL=48,CR=10,CT=12,CB=26;
 function niceMax(v){if(v<=0)return 4;const e=Math.pow(10,Math.floor(Math.log10(v)));for(const m of[1,1.2,1.6,2,2.4,3,4,5,6,8,10])if(m*e>=v*1.08)return m*e;return 10*e}
 function chartSvg(cur,prev,k){
   const v=cur.map(x=>x[k]),pv=prev.map(x=>x[k]),mx=niceMax(Math.max(...v,...pv,0)),n=v.length,pw=CW-CL-CR,ph=CH-CT-CB;
   const X=i=>CL+i/(n-1)*pw,Y=x=>CT+ph-Math.min(1,x/mx)*ph,path=a=>a.map((x,i)=>(i?"L":"M")+X(i).toFixed(1)+" "+Y(x).toFixed(1)).join(" ");
-  const grid=[0,.5,1].map(t=>`<line x1="${CL}" x2="${CW-CR}" y1="${Y(mx*t)}" y2="${Y(mx*t)}" stroke="#e8e8e8"/><text x="${CL-8}" y="${Y(mx*t)+4}" text-anchor="end" fill="#8a8a8a" font-size="11">${fm(k,mx*t).replace(/,\d\d/,"")}</text>`).join("");
-  const xl=[0,Math.floor((n-1)/2),n-1].map((i,j)=>`<text x="${X(i)}" y="${CH-6}" text-anchor="${j===0?"start":j===2?"end":"middle"}" fill="#8a8a8a" font-size="11">${cur[i].d.toLocaleDateString("de-DE",{day:"numeric",month:"short"})}</text>`).join("");
-  return `<svg viewBox="0 0 ${CW} ${CH}" preserveAspectRatio="none" id="csvg">${grid}<path d="${path(pv)}" fill="none" stroke="#b5b5b5" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/><path d="${path(v)} L${X(n-1)} ${Y(0)} L${X(0)} ${Y(0)}Z" fill="#2a7de1" opacity=".08"/><path d="${path(v)}" fill="none" stroke="#2a7de1" stroke-width="2.4" stroke-linejoin="round"/>${xl}<line id="cl" y1="${CT}" y2="${CT+ph}" stroke="#999" style="display:none"/><circle id="cd" r="5" fill="#2a7de1" stroke="#fff" stroke-width="2" style="display:none"/></svg>`}
+  const grid=[0,.5,1].map(t=>`<line x1="${CL}" x2="${CW-CR}" y1="${Y(mx*t)}" y2="${Y(mx*t)}" stroke="rgba(255,255,255,.14)"/><text x="${CL-8}" y="${Y(mx*t)+4}" text-anchor="end" fill="#a3a3a9" font-size="11">${fm(k,mx*t).replace(/,\d\d/,"")}</text>`).join("");
+  const xl=[0,Math.floor((n-1)/2),n-1].map((i,j)=>`<text x="${X(i)}" y="${CH-6}" text-anchor="${j===0?"start":j===2?"end":"middle"}" fill="#a3a3a9" font-size="11">${cur[i].d.toLocaleDateString("de-DE",{day:"numeric",month:"short"})}</text>`).join("");
+  return `<svg viewBox="0 0 ${CW} ${CH}" preserveAspectRatio="none" id="csvg" class="${V.wipe||V.fresh?"wipe":""}">${grid}<path d="${path(pv)}" fill="none" stroke="#7a7a80" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/><path d="${path(v)} L${X(n-1)} ${Y(0)} L${X(0)} ${Y(0)}Z" fill="#2aa7ff" opacity=".14"/><path d="${path(v)}" fill="none" stroke="#2aa7ff" stroke-width="2.4" stroke-linejoin="round"/>${xl}<line id="cl" y1="${CT}" y2="${CT+ph}" stroke="rgba(255,255,255,.5)" style="display:none"/><circle id="cd" r="5" fill="#2aa7ff" stroke="#000" stroke-width="2" style="display:none"/></svg>`}
 function bindChart(cur,k){
   const w=$("cw");if(!w)return;
   w.onmousemove=e=>{const s=$("csvg").getBoundingClientRect(),n=cur.length,x=(e.clientX-s.left)/s.width*CW;let i=Math.round((x-CL)/(CW-CL-CR)*(n-1));i=Math.max(0,Math.min(n-1,i));
@@ -350,7 +405,7 @@ function onboard(){
     save();o.classList.remove("show");V.page="home";render();toast("Dein Shop ist bereit 🎉")}}
 
 if(!S.onboarded)onboard();
-render();
+render();setTimeout(()=>$("main").classList.remove("anim"),1000);
 })();
 </script>
 </body>
