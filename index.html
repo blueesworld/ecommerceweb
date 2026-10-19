@@ -131,12 +131,21 @@ main.anim>:nth-child(2){animation-delay:.06s}main.anim>:nth-child(3){animation-d
 .obc{border-radius:32px;background:rgba(255,255,255,.8);backdrop-filter:blur(30px)}
 .sw{transition:background .25s}.sw:after{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== v3: helle Glas-Sidebar wie Shopify ===== */
+.side{display:flex;flex-direction:column;background:rgba(238,238,242,.62);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);color:var(--t1);box-shadow:inset -1px 0 0 rgba(0,0,0,.07)}
+#side{flex:1;display:flex;flex-direction:column}
+.nav{color:#424247}.nav:hover{background:rgba(0,0,0,.05)}.nav.on{color:#111}.nav em{background:#1a1a1a;color:#fff}.sl{color:#6a6a70}
+#lens{background:linear-gradient(180deg,#fff,rgba(255,255,255,.72));box-shadow:inset 0 1px 1px #fff,0 0 0 1px rgba(0,0,0,.07),0 4px 12px rgba(0,0,0,.1)}
+kbd{font:11px inherit;background:rgba(255,255,255,.12);border-radius:6px;padding:1px 7px;color:#c4c4c9}
+.strip{display:flex;flex-wrap:wrap}.strip>div{flex:1;min-width:140px;padding:14px 18px;border-right:1px solid rgba(0,0,0,.07)}.strip>div:last-child{border:0}.strip span{color:var(--t2);font-size:12.5px;font-weight:550}.strip b{display:block;font-size:20px;letter-spacing:-.02em}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.logo svg{flex:none}
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="logo"><i>E</i><span>ECommerce Pro</span></div>
-  <div class="srch"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8a8a8" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="gq" placeholder="Bestellungen, Produkte, Kunden suchen"></div>
+  <div class="logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z" fill="#008060" stroke="#008060"/><path d="M9 8V7a3 3 0 0 1 6 0v1" stroke="#fff"/></svg><span>ECommerce Pro</span></div>
+  <div class="srch"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8a8a8" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="gq" placeholder="Bestellungen, Produkte, Kunden suchen"><kbd>Strg K</kbd></div>
   <button class="tbtn" id="bell" title="Mitteilungen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><b id="bc" style="display:none">0</b></button>
   <div class="shop"><i id="si">M</i><span id="sn">Mein Shop</span></div>
 </header>
@@ -162,7 +171,7 @@ const LAST=["Müller","Schmidt","Yilmaz","Becker","Hoffmann","Kaya","Wagner","Fi
 const CITIES=["Berlin","Hamburg","München","Köln","Frankfurt","Stuttgart","Wien","Zürich","Bremen","Leipzig"];
 const EMOJIS=["👕","👟","🎧","⌚️","🧴","💄","🎒","📱","🕶","🧢","💍","🛋","☕️","📚","🎮","🕯"];
 const SAMPLE=[{name:"Premium Hoodie Onyx",price:64.9,stock:38,category:"Bekleidung",emoji:"👕"},{name:"Wireless Kopfhörer X2",price:129,stock:14,category:"Elektronik",emoji:"🎧"},{name:"Sneaker Runner Pro",price:89.5,stock:22,category:"Schuhe",emoji:"👟"},{name:"Smart Watch Lite",price:159,stock:4,category:"Elektronik",emoji:"⌚️"},{name:"Pflegeserum Gold",price:34.9,stock:47,category:"Beauty",emoji:"🧴"},{name:"Canvas Rucksack",price:54,stock:31,category:"Zubehör",emoji:"🎒"}];
-const IC={home:"M3.5 10.5 12 3l8.5 7.5V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z",orders:"M4 4h16v13l-3-2-2.5 2L12 15l-2.5 2L7 15l-3 2z",products:"M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z",customers:"M9 11a3.6 3.6 0 1 0 0-7.2A3.6 3.6 0 0 0 9 11zM2.8 20c.8-3.5 3.3-5.5 6.2-5.5s5.4 2 6.2 5.5z",discounts:"M19 5L5 19M7 8a1.5 1.5 0 1 0 0-.01M17 17a1.5 1.5 0 1 0 0-.01",notif:"M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9",settings:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM4 12h2M18 12h2M12 4v2M12 18v2",admin:"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"};
+const IC={home:"M3.5 10.5 12 3l8.5 7.5V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z",orders:"M4 4h16v13l-3-2-2.5 2L12 15l-2.5 2L7 15l-3 2z",products:"M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z",customers:"M9 11a3.6 3.6 0 1 0 0-7.2A3.6 3.6 0 0 0 9 11zM2.8 20c.8-3.5 3.3-5.5 6.2-5.5s5.4 2 6.2 5.5z",discounts:"M19 5L5 19M7 8a1.5 1.5 0 1 0 0-.01M17 17a1.5 1.5 0 1 0 0-.01",notif:"M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9",shop:"M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6",settings:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM4 12h2M18 12h2M12 4v2M12 18v2",admin:"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"};
 const ico=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${IC[k]}"/></svg>`;
 
 function blank(){return{onboarded:false,settings:{shopName:"",ownerName:"",email:"",industry:"",country:"DE",currency:"EUR",domain:""},products:[],orders:[],discounts:[],notifications:[],orderSeq:1000,visitors:0,sessions:{},setup:{theme:false,pay:false,domain:false},admin:{ntfy:false,topic:"",sound:true,banner:true,paid:true,customer:"",mode:"random",productId:"",qty:1,count:1,customName:"",customPrice:"",autoMin:6,autoMax:14}}}
@@ -226,14 +235,14 @@ function render(){
   $("sn").textContent=S.settings.shopName||"Mein Shop";$("si").textContent=(S.settings.shopName||"M").charAt(0).toUpperCase();
   $("bc").style.display=un?"grid":"none";$("bc").textContent=un>9?"9+":un;
   const nb=(k,l,extra)=>`<button class="nav ${V.page===k?"on":""}" data-p="${k}">${ico(k)}${l}${extra?`<em>${extra}</em>`:""}</button>`;
-  $("side").innerHTML=NAV.map(([k,l])=>nb(k,l,k==="orders"&&toShip?toShip:"")).join("")+`<div class="sl">Mitteilungen &amp; System</div>`+nb("notif","Mitteilungen",un||"")+nb("settings","Einstellungen")+nb("admin","Admin-Panel");
+  $("side").innerHTML=NAV.map(([k,l])=>nb(k,l,k==="orders"&&toShip?toShip:"")).join("")+`<div class="sl">Verkaufskanäle</div>`+nb("shop","Online-Shop")+`<div style="margin-top:auto">`+nb("notif","Mitteilungen",un||"")+nb("admin","Admin-Panel")+nb("settings","Einstellungen")+`</div>`;
   $("side").querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>go(b.dataset.p));
-  {const a=$("side").querySelector(".nav.on"),ln=$("lens");if(a&&ln){ln.style.height=a.offsetHeight+"px";ln.style.transform="translateY("+a.offsetTop+"px)"}}
-  ({home:pHome,orders:pOrders,products:pProducts,customers:pCustomers,discounts:pDiscounts,notif:pNotif,settings:pSettings,admin:pAdmin})[V.page]($("main"));
+  {const a=$("side").querySelector(".nav.on"),ln=$("lens");if(a&&ln){ln.style.height=a.offsetHeight+"px";ln.style.transform="translateY("+(a.offsetTop+$("side").offsetTop)+"px)"}}
+  ({home:pHome,orders:pOrders,products:pProducts,customers:pCustomers,discounts:pDiscounts,shop:pShop,notif:pNotif,settings:pSettings,admin:pAdmin})[V.page]($("main"));
 }
 function go(p){V.page=p;V.fresh=true;window.scrollTo(0,0);const m=$("main");m.classList.remove("anim");void m.offsetWidth;m.classList.add("anim");clearTimeout(go.t);go.t=setTimeout(()=>m.classList.remove("anim"),1000);render()}
 $("bell").onclick=()=>go("notif");
-$("gq").addEventListener("keydown",e=>{if(e.key==="Enter"){V.oq=e.target.value;V.of="all";e.target.value="";go("orders")}});
+document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="k"){e.preventDefault();$("gq").focus()}});$("gq").addEventListener("keydown",e=>{if(e.key==="Enter"){V.oq=e.target.value;V.of="all";e.target.value="";go("orders")}});
 
 /* drawer */
 function openDr(t,h){$("dt").textContent=t;$("db").innerHTML=h;$("ov").classList.add("show");$("dr").classList.add("show")}
@@ -292,12 +301,24 @@ function step(k){
   else if(k==="domain"){S.setup.domain=true;S.settings.domain=S.settings.domain||"mein-shop";save();toast("Domain gespeichert");render()}
   else go("admin")}
 
+function pShop(el){
+  const act=S.products.filter(p=>p.active&&p.stock>0),cnt=Object.values(V.cart).reduce((a,b)=>a+b,0),tot=Object.entries(V.cart).reduce((s,[id,q])=>{const p=S.products.find(x=>x.id===id);return s+(p?p.price*q:0)},0);
+  el.innerHTML=`<h1>Online-Shop<button class="btn g" id="co" ${cnt?"":"disabled"}>Zur Kasse · ${cnt} Artikel · ${fmt(tot)}</button></h1>
+  <div class="hero" style="padding-bottom:24px"><div class="gs">${esc((S.settings.domain||"shop")+".ecommerce-pro.app")}</div><div class="gr">${esc(S.settings.shopName)}</div><div class="gs">So sehen deine Kunden den Shop. Jeder Test-Kauf erzeugt eine Bestellung und eine Mitteilung.</div></div>
+  ${act.length?`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">${act.map(p=>`<div class="card" style="margin:0"><div style="height:130px;display:grid;place-items:center;font-size:56px;background:rgba(0,0,0,.04)">${p.emoji}</div><div class="pad"><b>${esc(p.name)}</b><div style="margin:4px 0 10px">${fmt(p.price)}</div><button class="btn" data-add="${p.id}" style="width:100%">In den Warenkorb</button></div></div>`).join("")}</div>`:`<div class="card"><div class="emp"><h3>Keine aktiven Produkte</h3>Füge Produkte hinzu, um den Shop zu testen.</div></div>`}`;
+  el.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>{V.cart[b.dataset.add]=(V.cart[b.dataset.add]||0)+1;toast("Zum Warenkorb hinzugefügt");pShop(el)});
+  $("co").onclick=()=>{
+    const items=Object.entries(V.cart).map(([id,q])=>{const p=S.products.find(x=>x.id===id);return p?{pid:id,name:p.name,emoji:p.emoji,price:p.price,qty:q}:null}).filter(Boolean);
+    openDr("Kasse",`<div class="card"><table><tbody>${items.map(i=>`<tr><td><span class="th">${i.emoji}</span>${esc(i.name)}<div class="hint" style="margin:0">${i.qty} × ${fmt(i.price)}</div></td><td class="r">${fmt(i.price*i.qty)}</td></tr>`).join("")}</tbody></table></div><div class="f"><label>Rabattcode (optional)</label><input id="cd" placeholder="WELCOME10" style="text-transform:uppercase"></div><button class="btn g" id="cp" style="width:100%">Jetzt bezahlen</button>`);
+    $("cp").onclick=()=>{const d=S.discounts.find(x=>x.active&&x.code===$("cd").value.trim().toUpperCase());const o=makeOrder({customer:S.settings.ownerName||"Test-Kunde",email:S.settings.email,city:"Testkauf",items,paid:true,percent:d?d.percent:0});V.cart={};closeDr();notifyOrder(o);toast("Bestellung #"+o.no+" erstellt")}}}
+
 /* ORDERS */
 function pOrders(el){
   const q=V.oq.toLowerCase();
   const list=[...S.orders].sort((a,b)=>new Date(b.date)-new Date(a.date)).filter(o=>(!q||o.customer.toLowerCase().includes(q)||String(o.no).includes(q))&&(V.of==="all"||(V.of==="unpaid"&&!o.paid)||(V.of==="unf"&&!o.fulfilled)||(V.of==="ful"&&o.fulfilled)));
   const tabs=[["all","Alle"],["unf","Nicht versendet"],["unpaid","Unbezahlt"],["ful","Versendet"]];
   el.innerHTML=`<h1>Bestellungen<button class="btn g" id="newO">Bestellung simulieren</button></h1>
+  <div class="card strip"><div><span>Bestellungen heute</span><b>${S.orders.filter(o=>dkey(o.date)===dkey(new Date())).length}</b></div><div><span>Zu versenden</span><b>${S.orders.filter(o=>!o.fulfilled).length}</b></div><div><span>Unbezahlt</span><b>${S.orders.filter(o=>!o.paid).length}</b></div><div><span>Umsatz gesamt</span><b>${fmt(S.orders.reduce((t,o)=>t+o.total,0))}</b></div></div>
   <div class="card"><div class="tabs">${tabs.map(t=>`<button class="tab ${V.of===t[0]?"on":""}" data-f="${t[0]}">${t[1]}</button>`).join("")}<input id="oq" placeholder="Bestellungen durchsuchen" value="${esc(V.oq)}"></div>
   ${list.length?`<table><thead><tr><th>Bestellung</th><th>Datum</th><th>Kunde</th><th>Zahlung / Versand</th><th>Quelle</th><th class="r">Gesamt</th></tr></thead><tbody>${list.map(o=>`<tr data-id="${o.id}"><td><b>#${o.no}</b></td><td>${fmtDate(o.date)}</td><td>${esc(o.customer)}</td><td>${badges(o)}</td><td>${esc(o.source||"")}</td><td class="r">${fmt(o.total)}</td></tr>`).join("")}</tbody></table>`:`<div class="emp"><h3>${S.orders.length?"Keine Treffer":"Noch keine Bestellungen"}</h3>${S.orders.length?"Passe Suche oder Filter an.":"Sobald jemand kauft, erscheint die Bestellung hier."}</div>`}</div>`;
   $("oq").oninput=e=>{V.oq=e.target.value;const p=e.target.selectionStart;pOrders(el);const n=$("oq");n.focus();n.setSelectionRange(p,p)};
